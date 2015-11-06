@@ -1,0 +1,49 @@
+@(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Mood Piggie Polls</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        <link rel="stylesheet" type="text/css" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.3/themes/base/jquery-ui.css" />
+
+
+
+
+    </head>
+    <body>
+
+        <div class="row-fluid">
+
+
+            <header class="topbar col-md-9 col-md-offset-1">
+                <h1 class="fill">
+                    <a href="@routes.Application.index()">
+                        Mood Piggy Polls
+                    </a>
+                </h1>
+            </header>
+
+
+            <div class="row-fluid">
+
+                <div class="col-md-9 col-md-offset-1">
+                    @content
+                </div>
+            </div>
+
+        </div>
+
+        <footer align="center">
+            <!-- Add footnote here -->
+        </footer>
+
+    </body>
+
+</html>

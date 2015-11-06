@@ -1,0 +1,59 @@
+@(polls: List[Poll])
+
+@**********************************
+* Helper generating table headers *
+***********************************@
+@header(key: String) = {
+    <th class="@key.replace(".", "_") header">
+        @key
+    </th>
+}
+
+@main {
+
+
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                @header("ID")
+                                @header("Due Date")
+                                @header("Score")
+                                @header("Responses")
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        @for(poll <- polls) {
+                            <tr>
+                                <td>
+                                    <a href="@routes.Polls.get(poll.id)">@poll.id</a>
+                                </td>
+                                <td>
+                                    @poll.dueDate
+                                </td>
+                                <td>
+
+                                    @if(poll.tokens.filter(_.value == "NEW").size > 0){
+                                        n/a
+                                    } else {
+                                        @poll.score
+                                }
+                                </td>
+                                <td>
+                                    @poll.tokens.filter(_.value == "SUBMITTED").size
+                                </td>
+
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+
+
+
+            <div class="row-fluid">
+                <form action="@routes.Polls.add()" method="post">
+                    <button type="submit" class="btn btn-success" >Add</button>
+                </form>
+            </div>
+
+}

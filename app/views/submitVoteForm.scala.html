@@ -1,0 +1,47 @@
+@(poll:Long, voteForm: Form[Token])
+
+@main {
+
+
+  <div class="col-md-9 col-md-offset-1">
+
+    <h3>How was your week? </h3>
+    <p>&nbsp;</p>
+
+
+    <form id="voteForm" action="@routes.Polls.score(poll,voteForm.get().id.toString)" method="post">
+      <table>
+        <tbody>
+          <tr>
+            <td class="col-xs-4">
+              <input type="submit" class="btn btn-success" value="Just perfect">
+              <input id="mood" name="mood" type="hidden" value="2">
+              <input id="token" name="mood" type="hidden" value="2">
+            </td>
+            <td class="col-xs-4">
+              <input id="btn-ok" type="button" class="btn btn-warning" value="Puh, okay">
+            </td>
+            <td class="col-xs-4">
+              <input id="btn-not" type="button" class="btn btn-danger" value="Don't ask">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+
+  <script type="application/javascript">
+
+      $('#btn-ok').on('click', function(e){
+        $("#mood").val(1);
+        $("#voteForm").submit();
+      });
+
+      $('#btn-not').on('click', function(e){
+        $("#mood").val(0);
+        $("#voteForm").submit();
+      });
+
+  </script>
+
+}

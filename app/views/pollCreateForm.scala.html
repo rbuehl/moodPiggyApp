@@ -1,0 +1,37 @@
+@(pollForm: Form[Poll])
+
+@import helper._
+
+@main {
+
+
+      <h3>Create new poll</h3>
+
+      @form(routes.Polls.save()) {
+
+        <fieldset>
+
+          @inputText(pollForm("email"))
+          @inputPassword(pollForm("password"))
+
+
+
+
+        </fieldset>
+
+        <div class="actions">
+          <input type="submit" value="Create" class="btn btn-success">
+          <a class="btn btn-primary" href="@routes.Application.index()">Cancel</a>
+        </div>
+
+
+
+      }
+
+  <script>
+          $ ( function ( ) {
+            $ ( "#date" ).datepicker ( { dateFormat : 'yy-mm-dd' } ).val ( ) ;
+          } ) ;
+  </script>
+
+}

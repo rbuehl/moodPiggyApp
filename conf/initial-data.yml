@@ -1,0 +1,55 @@
+########################################################################################################################
+### YAML-File to feed database initial data.                                                                         ###
+########################################################################################################################
+
+
+### & is called an anchor, * is called a reference. Mark objects with & and a key name (e.g. &KEY) to reference them ###
+### in other objects with * and the specified key name (e.g. *KEY).                                                  ###
+
+
+
+########################################################################################################################
+### Users                                                                                                   ###
+########################################################################################################################
+
+
+users:
+  - !!models.User
+      lastname: Cvetic
+      firstname: Vladimir
+      email: vladimir.cvetic@allianz.de
+
+  - !!models.User
+      lastname: Danieli
+      firstname: Michele
+      email: michele.danieli@allianz.de
+
+  - !!models.User
+      lastname: Georgobasiles
+      firstname: Georgios
+      email: georgios.georgobasiles@allianz.de
+
+  - !!models.User
+      lastname: Grillo
+      firstname: Manlio
+      email: manlio.grillo@allianz.com
+
+  - !!models.User
+      lastname: Hohpe
+      firstname: Gregor
+      email: gregor.hohpe@allianz.com
+
+  - !!models.User
+      lastname: Landreau
+      firstname: Jean-Francois
+      email: jean-francois.landreau@allianz.com
+
+  - !!models.User
+      lastname: Mc Garry
+      firstname: Gavin
+      email: gavin.mcgarry@allianz.com
+
+  - !!models.User
+      lastname: Thee
+      firstname: Peter
+      email: peter.thee@allianz.com

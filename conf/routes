@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# API services
+GET     /API/polls                  controllers.Polls.list()
+POST    /API/polls                  controllers.Polls.add()
+GET     /API/polls/:id              controllers.Polls.getAsJson(id:Long)
+GET     /API/polls/:id/tokens       controllers.Polls.getTokens(id:Long)
+POST    /API/polls/:id/:token       controllers.Polls.score(id:Long, token:String)
+
+
+# GUI Application services
+GET     /                           controllers.Application.index()
+GET     /polls                      controllers.Polls.list()
+GET     /polls/:id                  controllers.Polls.get(id:Long)
+GET     /polls/:id/close            controllers.Polls.close(id:Long)
+GET     /polls/:id/:token           controllers.Polls.showVote(id:Long, token:String)
+POST    /polls                      controllers.Polls.save()
+
+
+GET     /tokens                     controllers.Tokens.list()
+POST    /tokens                     controllers.Tokens.create()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
