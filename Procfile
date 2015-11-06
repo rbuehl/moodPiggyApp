@@ -1,1 +1,1 @@
-web: play run
+web: target/universal/stage/bin/moodpiggyapp -Dhttp.port=$PORT
