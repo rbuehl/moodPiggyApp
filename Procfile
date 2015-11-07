@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/moodpiggyapp -Dhttp.port=$PORT
+web: target/universal/stage/bin/moodPiggyApp -Dhttp.port=$PORT -Dplay.evolutions.db.default.autoApply=true
